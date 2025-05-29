@@ -6,20 +6,32 @@
     <title>Incremental Roguelike Pacman</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="game-container">
+<body>    <div class="game-container">
+        <div class="theme-indicator" id="themeIndicator">Theme: Classic</div>
+        <div class="performance-stats" id="performanceStats">
+            <div>Cache Hit Rate: <span id="cacheHitRate">0%</span></div>
+            <div>FPS: <span id="fpsCounter">60</span></div>
+        </div>
         <div class="stats">
             <div class="stat">Score: <span id="score">0</span></div>
             <div class="stat">Level: <span id="level">1</span></div>
             <div class="stat">Lives: <span id="lives">3</span></div>
             <div class="stat">Multiplier: <span id="multiplier">1x</span></div>
+            <div class="stat">Dots Left: <span id="dots">0</span></div>
         </div>
-        <canvas id="gameCanvas"></canvas>
-        <div class="upgrades" id="upgrades">
-            <h3>Upgrades (between levels)</h3>
-            <button class="upgrade-btn" data-upgrade="speed">Speed+ (Cost: 100)</button>
-            <button class="upgrade-btn" data-upgrade="lives">Extra Life (Cost: 500)</button>
-            <button class="upgrade-btn" data-upgrade="multiplier">Score x2 (Cost: 1000)</button>
+        <div class="combo-display" id="combo" style="display: none;">0x Combo!</div>
+        <canvas id="gameCanvas"></canvas>        <div class="upgrades" id="upgrades">
+            <h3 id="levelBonus">Upgrades (between levels)</h3>
+            <div class="upgrade-grid">
+                <button class="upgrade-btn" data-upgrade="speed">Speed+ (Cost: 100)</button>
+                <button class="upgrade-btn" data-upgrade="lives">Extra Life (Cost: 500)</button>
+                <button class="upgrade-btn" data-upgrade="multiplier">Score +1x (Cost: 1000)</button>
+                <button class="upgrade-btn" data-upgrade="pellet">Power Boost (Cost: 200)</button>
+            </div>
+            <div class="upgrade-instructions">
+                <p>Click upgrades to purchase, then click outside to continue</p>
+                <p>Controls: Arrow keys to move, SPACE to pause</p>
+            </div>
         </div>
         <div class="game-over" id="gameOver">
             <h2>Game Over</h2>
