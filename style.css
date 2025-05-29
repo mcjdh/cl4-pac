@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.stat {
+    padding: 5px 10px;
+    border: 1px solid #fff;
+}
+
+#gameCanvas {
+    border: 2px solid #fff;
+    background: #111;
+}
+
+.upgrades {
+    margin-top: 20px;
+    display: none;
+}
+
+.upgrades h3 {
+    margin-bottom: 10px;
+}
+
+.upgrade-btn {
+    background: #222;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: monospace;
+    transition: all 0.3s;
+}
+
+.upgrade-btn:hover:not(:disabled) {
+    background: #fff;
+    color: #000;
+}
+
+.upgrade-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.game-over {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #fff;
+    background: #111;
+}
+
+.game-over h2 {
+    margin-bottom: 10px;
+}
+
+.game-over button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 16px;
+}
